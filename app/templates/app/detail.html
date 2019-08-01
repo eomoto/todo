@@ -1,0 +1,10 @@
+<h1>{{ item.item_text }}</h1>
+<p>{{item.complete}}</p>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'app:update' item.id %}" method="post">
+{% csrf_token %}
+<input type="checkbox" name="checkbox" id="item" {% if item.complete %} checked="checked"{% endif %}>
+<label for="checkbox">Completed?</label><br>
+<input type="submit" value="Update">
+</form>
