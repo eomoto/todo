@@ -16,10 +16,10 @@ class DetailView(generic.DetailView):
   template_name = 'app/detail.html'
 
 def update(request, item_id):
-    item = get_object_or_404(Item, pk=item_id)
-    if "checkbox" in request.POST:
-      item.complete = True
-    else:
-      item.complete = False
-    item.save()
-    return HttpResponseRedirect(reverse('app:detail', args=(item.id,)))
+  item = get_object_or_404(Item, pk=item_id)
+  if "checkbox" in request.POST:
+    item.complete = True
+  else:
+    item.complete = False
+  item.save()
+  return HttpResponseRedirect(reverse('app:detail', args=(item.id,)))
