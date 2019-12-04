@@ -1,3 +1,3 @@
 # Todo
 
-Basic todo list app
+Basic todo list application
